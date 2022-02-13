@@ -170,7 +170,6 @@
             foot.draw();
             tree.snapshot("p2", 500, 0, 610, 680);
 
-            // 会有闪烁不得意这样做, (＞﹏＜)
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
             canvas.css("background", "#ffe");
             $await(Jscex.Async.sleep(300));
@@ -189,14 +188,13 @@
 
         var textAnimate = eval(Jscex.compile("async", function () {
 		    var together = new Date();
-		    together.setFullYear(2021); 			//时间年月日 
-			                                      //来自gmw的特别注释：注意月份要减一!!!!!!!
-			together.setMonth(8)
+		    together.setFullYear(2021); 			//时间
+			together.setMonth(8)					//注意js中月份要减一!!!!!!!
 			together.setDate(22)
-		    together.setHours(16);						//小时
-		    together.setMinutes(0);					//分钟
-		    together.setSeconds(0);					//秒前一位
-		    together.setMilliseconds(0);				//秒第二位
+		    together.setHours(16);
+		    together.setMinutes(0);
+		    together.setSeconds(0);
+		    together.setMilliseconds(0);
 
 		    $("#code").show().typewriter();
             $("#clock-box").fadeIn(500);
